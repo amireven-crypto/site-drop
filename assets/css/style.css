@@ -1,4 +1,4 @@
-/* SITE DROP — Apple design system, younger twist, Liquid Glass (iOS 26 / visionOS).
+/* PIXELPOP — Apple design system, younger twist, Liquid Glass (iOS 26 / visionOS).
    Neutrals + Inter typography + pill language. Accent: #2997ff → #BF5AF2 → #FF375F.
    Glass: backdrop-filter blur + saturate, thin highlight borders, inner light, soft shadow. */
 
@@ -290,18 +290,14 @@ h1, h2, h3 { margin: 0; }
   position: relative;
   z-index: 1;
 }
-.logo .mark {
-  width: 30px;
-  height: 38px;
+.logo .wordmark {
+  height: 36px;
+  width: auto;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(41, 151, 255, 0.28));
 }
-.logo .word {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  line-height: 1;
+.foot .logo .wordmark {
+  height: 32px;
 }
 .links-desk,
 .links {
