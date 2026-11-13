@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amireven-crypto.github.io/site-drop/sitemap.xml
