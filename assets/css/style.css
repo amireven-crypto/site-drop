@@ -1212,3 +1212,57 @@ a.btn.primary.magnetic,
 p { text-wrap: pretty; }
 .head h2, .contact h2, .proj-body h3 { text-wrap: balance; }
 .chapter-light .eyebrow, .chapter-white .eyebrow, .foot p { color: var(--caption-on-light); }
+
+/* ——— Dark mode: follows the visitor's system setting (prefers-color-scheme), 13 Nov 2026 ———
+   Light chapters become a deep candy night; the candy accents stay, small-text tokens are lifted for AA on dark. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #F4F2FA;
+    --gray: #A9A6B6;
+    --body-on-light: #CFCBDB;
+    --caption-on-light: #ADA8BC;
+    --pink-text: #FF7AB8;
+    --blue-text: #8DB9FF;
+    --mint-text: #4FEBD2;
+    --orange-text: #FFB066;
+    --glass-bg-light: rgba(255, 255, 255, 0.055);
+    --glass-stroke-light: rgba(255, 255, 255, 0.14);
+    --glass-shadow-light: 0 14px 40px rgba(0, 0, 0, 0.42);
+    --glass-inset-light: inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+  .chapter-light {
+    background:
+      radial-gradient(38% 30% at 6% 12%, rgba(255, 45, 138, 0.16), transparent 70%),
+      radial-gradient(34% 28% at 96% 40%, rgba(43, 123, 255, 0.16), transparent 70%),
+      radial-gradient(30% 26% at 30% 96%, rgba(32, 224, 192, 0.13), transparent 70%),
+      rgba(11, 10, 22, 0.975);
+  }
+  .chapter-white {
+    background:
+      radial-gradient(36% 30% at 92% 8%, rgba(43, 123, 255, 0.15), transparent 70%),
+      radial-gradient(34% 30% at 4% 70%, rgba(255, 138, 31, 0.13), transparent 70%),
+      radial-gradient(28% 24% at 70% 98%, rgba(255, 45, 138, 0.13), transparent 70%),
+      rgba(16, 14, 30, 0.975);
+  }
+  .chapter-light h2, .chapter-light h3, .chapter-white h2, .chapter-white h3,
+  .chapter-light .head h2, .chapter-white .head h2 { color: #F7F5FC; }
+  .chapter-light .accent, .chapter-white .accent { color: #7FB0FF; }
+  .tags li {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  .tags li:nth-child(3n+1) { color: #FF7AB8; }
+  .tags li:nth-child(3n+2) { color: #8DB9FF; }
+  .tile .ic, .tile .gi { background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.03)); }
+  .lift-card.media-link { box-shadow: 0 10px 32px rgba(0, 0, 0, 0.5); }
+  .foot { background: rgba(8, 7, 15, 0.96) !important; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .foot nav a:hover { background: rgba(255, 255, 255, 0.08); }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .chapter-light .tile, .chapter-light .steps li, .chapter-light .next, .chapter-light .tags li,
+    .chapter-white .tile, .chapter-white .tags li { background: rgba(28, 26, 40, 0.96); }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .chapter-light .tile, .chapter-light .steps li, .chapter-light .next, .chapter-light .tags li,
+    .chapter-white .tile, .chapter-white .tags li { background: rgba(28, 26, 40, 0.96); }
+  }
+}
