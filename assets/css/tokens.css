@@ -1,0 +1,167 @@
+/* PIXELPOP tokens.
+   Color values are the existing PIXELPOP palette (see the previous stylesheet).
+   Relay's black/lime pair is not used. Blue, mint, orange, violet and pink
+   carry the mechanisms that lime carried on the reference.
+   Type is self-hosted: Geist (Vercel, SIL OFL) and Instrument Serif italic
+   (SIL OFL). Files: assets/fonts/. */
+
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/geist-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("../fonts/instrument-serif-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Raw palette — extracted from the previous PIXELPOP site */
+  --black: #050507;
+  --ink: #1d1d1f;
+  --gray: #6e6e73;
+  --pale: #f5f5f7;
+  --white: #ffffff;
+  --blue: #2B7BFF;
+  --blue-hover: #4A8CFF;
+  --blue-link: #1A6AE8;
+  --blue-hi: #5BA3FF;
+  --blue-text: #1559C7;
+  --mint: #20E0C0;
+  --mint-text: #06705F;
+  --orange: #FF8A1F;
+  --orange-text: #9A4400;
+  --violet: #BF5AF2;
+  --pink: #FF2D8A;
+  --pink-deep: #C81066;
+  --pink-text: #C81066;
+  --graphite: #272729;
+  --border: #d2d2d7;
+  --border-strong: #86868b;
+  --caption-on-light: #5f5f64;
+  --body-on-light: #3a3a3f;
+  --night: #0b0a16;
+  --night-soft: #100e1e;
+
+  --accent-grad: linear-gradient(100deg, #2B7BFF 0%, #20E0C0 42%, #FF8A1F 72%, #FF2D8A 100%);
+
+  /* Semantic — light scheme. Dark scheme overrides below. */
+  --bg: var(--pale);
+  --bg-elev: var(--white);
+  --fg: var(--ink);
+  --muted: var(--body-on-light);
+  --faint: var(--caption-on-light);
+  --line: var(--border);
+  --card: rgba(255, 255, 255, 0.78);
+  --card-strong: rgba(255, 255, 255, 0.92);
+  --card-stroke: rgba(255, 255, 255, 0.86);
+  --card-ink: var(--ink);
+  --shadow: 0 18px 50px rgba(29, 29, 31, 0.10);
+  --shadow-soft: 0 8px 24px rgba(29, 29, 31, 0.06);
+  --inset: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --nav-bg: rgba(245, 245, 247, 0.78);
+  --scrim: var(--pale);
+  --stream-alpha: 0.55;
+  --plate: var(--pink);
+  --plate-ink: var(--black);
+  --btn: var(--blue-link);
+  --btn-hover: #1559C7;
+  --btn-ink: var(--white);
+  --ghost-bg: rgba(255, 255, 255, 0.55);
+  --ghost-ink: var(--ink);
+  --mark: var(--blue);
+  --focus: var(--blue-text);
+  --danger: var(--pink-deep);
+
+  --font-text: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+
+  --step--1: 0.8125rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.6rem, 2.4vw, 2rem);
+  --step-3: clamp(2.1rem, 3.4vw, 2.75rem);
+  --step-4: clamp(2.7rem, 5.4vw, 4.75rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+
+  --radius-xs: 8px;
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-plate: 40px;
+  --radius-pill: 999px;
+  --radius-mark: 10px;
+
+  --wrap: 1120px;
+  --nav-h: 72px;
+  --measure: 66ch;
+
+  --glass-blur: 18px;
+  --glass-sat: 160%;
+
+  --dur-instant: 120ms;
+  --dur-fast: 220ms;
+  --dur-base: 480ms;
+  --dur-settle: 900ms;
+  --dur-loader: 1200ms;
+  --dur-fold: 720ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-mechanism: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-fold: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --bp-phone: 699px;
+  --bp-tablet: 899px;
+  --bp-desk: 1100px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: var(--black);
+    --bg-elev: #14131c;
+    --fg: #F4F2FA;
+    --muted: #CFCBDB;
+    --faint: #ADA8BC;
+    --line: rgba(255, 255, 255, 0.14);
+    --card: rgba(255, 255, 255, 0.06);
+    --card-strong: rgba(20, 19, 28, 0.78);
+    --card-stroke: rgba(255, 255, 255, 0.16);
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --inset: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    --nav-bg: rgba(5, 5, 7, 0.72);
+    --scrim: var(--black);
+    --stream-alpha: 0.95;
+    --ghost-bg: rgba(255, 255, 255, 0.06);
+    --ghost-ink: #F4F2FA;
+    --pink-text: #FF7AB8;
+    --blue-text: #8DB9FF;
+    --mint-text: #4FEBD2;
+    --orange-text: #FFB066;
+    --focus: #8DB9FF;
+  }
+}
+
+@media (max-width: 699px) {
+  :root { --glass-blur: 12px; --nav-h: 64px; --stream-alpha: 0.38; }
+}
+@media (max-width: 699px) and (prefers-color-scheme: dark) {
+  :root { --stream-alpha: 0.72; }
+}
