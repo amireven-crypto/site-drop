@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'none'; form-action 'self' mailto:; frame-src 'none'; worker-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Design system | PIXELPOP</title>
+  <meta name="description" content="PIXELPOP design system: the existing candy palette, type, space, glass and the motion mechanisms used across the site.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#050507">
+  <link rel="canonical" href="https://amireven-crypto.github.io/site-drop/design-system.html">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/boot.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <canvas id="stream" aria-hidden="true"></canvas>
+  <div class="loader" id="loader" hidden>
+    <div class="loader-core" id="loader-core"></div>
+  </div>
+
+  <header class="nav">
+    <div class="wrap nav-bar">
+      <a class="logo" href="index.html" aria-label="PIXELPOP — home">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="10" fill="#2B7BFF"/>
+          <rect x="13.4" y="14.2" width="3.2" height="12.4" rx="1.6" fill="#F3E6D4"/>
+          <circle cx="16.4" cy="13.2" r="6.1" fill="#fff"/>
+          <path d="M16.4 8.6c2.4 0 4 1.4 4 3.3 0 2.6-2.3 3.5-4.5 3.9" fill="none" stroke="#FF2D8A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-word">PIXELPOP</span>
+      </a>
+      <nav class="links-desk" aria-label="Design system">
+        <a href="#color">Color</a>
+        <a href="#type">Type</a>
+        <a href="#space">Space</a>
+        <a href="#motion">Motion</a>
+        <a href="#components">Components</a>
+      </nav>
+      <div class="nav-end">
+        <a class="btn primary sm" href="index.html">Back to the site</a>
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="menu" id="menu" aria-label="Mobile">
+    <a href="#color">Color</a>
+    <a href="#type">Type</a>
+    <a href="#space">Space</a>
+    <a href="#motion">Motion</a>
+    <a href="#components">Components</a>
+    <a href="index.html">Back to the site</a>
+  </nav>
+
+  <main id="main" class="page" tabindex="-1">
+    <section class="sys-hero">
+      <div class="wrap">
+        <p class="kicker"><i></i> Design system</p>
+        <h1>The mechanisms, in PIXELPOP color.</h1>
+        <p class="lede mt">Layout, type, glass, the light stream, the loader ring, the logo plate and the scope meter follow the public Relay reference. The palette does not. Every color below is taken from the previous PIXELPOP stylesheet. Relay’s lime is not a token here.</p>
+      </div>
+    </section>
+
+    <section id="color" class="anchor">
+      <div class="wrap doc-block">
+        <h2>Color</h2>
+        <p class="sub">Raw swatches stay the same in light and dark. Semantic tokens (<code>--bg</code>, <code>--fg</code>, <code>--muted</code>, glass) switch with <code>prefers-color-scheme</code>. Small text on blue uses <code>--blue-link</code> (#1A6AE8) or <code>--blue-text</code> (#1559C7), not white on #2B7BFF.</p>
+        <div class="swatches">
+          <div class="swatch"><i class="c-black"></i><span>Black</span><code>#050507</code></div>
+          <div class="swatch"><i class="c-ink"></i><span>Ink</span><code>#1d1d1f</code></div>
+          <div class="swatch"><i class="c-gray"></i><span>Gray</span><code>#6e6e73</code></div>
+          <div class="swatch"><i class="c-pale"></i><span>Pale</span><code>#f5f5f7</code></div>
+          <div class="swatch"><i class="c-white"></i><span>White</span><code>#ffffff</code></div>
+          <div class="swatch"><i class="c-blue"></i><span>Blue</span><code>#2B7BFF</code></div>
+          <div class="swatch"><i class="c-blue-link"></i><span>Blue link / button</span><code>#1A6AE8</code></div>
+          <div class="swatch"><i class="c-blue-text"></i><span>Blue text</span><code>#1559C7</code></div>
+          <div class="swatch"><i class="c-mint"></i><span>Mint</span><code>#20E0C0</code></div>
+          <div class="swatch"><i class="c-mint-text"></i><span>Mint text</span><code>#06705F</code></div>
+          <div class="swatch"><i class="c-orange"></i><span>Orange</span><code>#FF8A1F</code></div>
+          <div class="swatch"><i class="c-orange-text"></i><span>Orange text</span><code>#9A4400</code></div>
+          <div class="swatch"><i class="c-violet"></i><span>Violet</span><code>#BF5AF2</code></div>
+          <div class="swatch"><i class="c-pink"></i><span>Pink / plate</span><code>#FF2D8A</code></div>
+          <div class="swatch"><i class="c-pink-deep"></i><span>Pink deep</span><code>#C81066</code></div>
+          <div class="swatch"><i class="c-graphite"></i><span>Graphite</span><code>#272729</code></div>
+        </div>
+        <p class="fine">Dark scheme lifts the small-text candy colors: pink #FF7AB8, blue #8DB9FF, mint #4FEBD2, orange #FFB066, on #050507. Night chapter grounds from the previous site, #0b0a16 and #100e1e, stay available as <code>--night</code> and <code>--night-soft</code>.</p>
+      </div>
+    </section>
+
+    <section id="type" class="anchor">
+      <div class="wrap doc-block">
+        <h2>Type</h2>
+        <p class="sub">Geist for interface and display. Instrument Serif italic for the one stressed phrase in a headline — the job lime italics did on the reference, set in PIXELPOP pink-text. Both faces are self-hosted (SIL OFL).</p>
+        <p class="display">Websites that look <em>fresh.</em></p>
+        <p class="lede">Body is 1.0625rem, line-height 1.5, tracking −0.011em, measure 66ch. Display tracking stops at −0.035em.</p>
+        <table class="token-table">
+          <thead><tr><th>Token</th><th>Size</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td><code>--step-4</code></td><td>clamp(2.7rem, 5.4vw, 4.75rem)</td><td>Hero. Cap under 6rem.</td></tr>
+            <tr><td><code>--step-3</code></td><td>clamp(2.1rem, 3.4vw, 2.75rem)</td><td>Section titles</td></tr>
+            <tr><td><code>--step-2</code></td><td>clamp(1.6rem, 2.4vw, 2rem)</td><td>Card titles</td></tr>
+            <tr><td><code>--step-1</code></td><td>1.25rem</td><td>Lead</td></tr>
+            <tr><td><code>--step-0</code></td><td>1.0625rem</td><td>Body</td></tr>
+            <tr><td><code>--step--1</code></td><td>0.8125rem</td><td>Meta, meter scale</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="space" class="anchor">
+      <div class="wrap doc-block">
+        <h2>Space, radius, grid</h2>
+        <p class="sub">4px base. More space above a heading than between a heading and its paragraph. Content width 1120px.</p>
+        <div class="scale" aria-hidden="true">
+          <b class="s1"></b><b class="s2"></b><b class="s3"></b><b class="s4"></b><b class="s5"></b><b class="s6"></b><b class="s7"></b>
+        </div>
+        <p class="fine">4 · 8 · 12 · 16 · 24 · 32 · 48. Section padding uses 72px and 112px (<code>--space-8</code>, <code>--space-9</code>).</p>
+        <div class="radius-row">
+          <div><div class="rbox rad-xs"></div><p class="fine">8</p></div>
+          <div><div class="rbox rad-sm"></div><p class="fine">14</p></div>
+          <div><div class="rbox rad-md"></div><p class="fine">22</p></div>
+          <div><div class="rbox rad-lg"></div><p class="fine">32</p></div>
+          <div><div class="rbox rad-plate"></div><p class="fine">40 plate</p></div>
+          <div><div class="rbox rad-pill"></div><p class="fine">pill</p></div>
+        </div>
+        <table class="token-table">
+          <thead><tr><th>Name</th><th>Width</th></tr></thead>
+          <tbody>
+            <tr><td>Phone</td><td>under 700px. One column. Stream quieter. No tilt.</td></tr>
+            <tr><td>Tablet</td><td>700–899px. Still one column. Menu remains.</td></tr>
+            <tr><td>Desk</td><td>900px and up. Split hero, alternating work, three scope cards. Nav links from 980px.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="glass" class="anchor">
+      <div class="wrap doc-block">
+        <h2>Glass and shadow</h2>
+        <p class="sub">Glass is the hero window and the floating panels: a translucent fill, a 1px light edge, an inset highlight and a soft offset shadow. Blur is 18px (12px on phones) and turns off for <code>prefers-reduced-transparency</code>.</p>
+        <div class="shadow-row">
+          <div class="panel"><h3>Panel</h3><p class="fine mt">--card, --shadow-soft, --inset</p></div>
+          <div class="window"><div class="window-bar"><span>Glass window</span><span class="live">running</span></div><div class="flow"><p>The hero window tilts on a fine pointer. Inside it, a build runs: brief, design, preview, launch.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motion" class="anchor">
+      <div class="wrap doc-block">
+        <h2>Motion</h2>
+        <table class="token-table">
+          <thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td><code>--dur-instant</code></td><td>120ms</td><td>Press</td></tr>
+            <tr><td><code>--dur-fast</code></td><td>220ms</td><td>Hover, plate step</td></tr>
+            <tr><td><code>--dur-base</code></td><td>480ms</td><td>Local state</td></tr>
+            <tr><td><code>--dur-settle</code></td><td>900ms</td><td>Focus-settle reveal</td></tr>
+            <tr><td><code>--dur-loader</code></td><td>1200ms</td><td>Ring count</td></tr>
+            <tr><td><code>--dur-fold</code></td><td>720ms</td><td>Ring into the logo</td></tr>
+            <tr><td><code>--ease-mechanism</code></td><td>cubic-bezier(0.22, 1, 0.36, 1)</td><td>Settle, tilt</td></tr>
+            <tr><td><code>--ease-fold</code></td><td>cubic-bezier(0.65, 0, 0.35, 1)</td><td>Fold</td></tr>
+          </tbody>
+        </table>
+        <div class="comp-row">
+          <button class="btn primary" type="button" id="replay">Replay the settle</button>
+          <p class="settle in" id="settle-demo">This line arrives out of focus and settles.</p>
+        </div>
+        <ul>
+          <li>Loader: a candy ring counts 0–100, then the mark translates and scales into the nav logo.</li>
+          <li>Stream: one canvas ribbon in blue, mint, orange, pink and violet, the bright knot following scroll. Paused when the tab is hidden. A single still frame when motion is reduced.</li>
+          <li>Plate: the pink field scales out of the top of its section (toward the logo) and folds back as you pass it. Ten steps, no inline styles, so the content-security policy can stay strict.</li>
+          <li>Sections with <code>.settle</code> blur in, then clear, once.</li>
+          <li><code>prefers-reduced-motion</code> skips the loader, the tilt, the plate scale and the blur.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="components" class="anchor">
+      <div class="wrap doc-block">
+        <h2>Components</h2>
+        <div class="comp-row">
+          <a class="btn primary" href="index.html#contact">Start a project</a>
+          <a class="btn ghost" href="index.html#work">See the work</a>
+          <button class="btn dark" type="button" disabled>Disabled</button>
+          <p class="status"><b></b> Preview before launch</p>
+        </div>
+        <div id="scope" data-scope="new">
+        <div class="scope-top">
+          <div class="meter-card">
+            <p class="fine">scope meter</p>
+            <label class="meter-q" for="meter">How much should the site do?</label>
+            <div class="meter">
+              <input id="meter" type="range" min="0" max="2" step="1" value="1" aria-valuetext="New website. Quoted after a preview.">
+              <div class="meter-scale" aria-hidden="true"><span>Redesign</span><span>New website</span><span>Online store</span></div>
+            </div>
+          </div>
+          <div class="quote-card" aria-live="polite">
+            <p class="fine">your scope</p>
+            <p class="scope-only" data-for="redesign"><strong>Redesign</strong></p>
+            <p class="scope-only" data-for="new"><strong>New website</strong></p>
+            <p class="scope-only" data-for="store"><strong>Online store</strong></p>
+            <p class="price">Quoted after a preview</p>
+            <p class="fine">There is no public rate card. The meter changes scope, not a price.</p>
+          </div>
+        </div>
+        </div>
+        <form id="sample-form" class="panel" action="mailto:pixelpopsite@gmail.com" method="post" enctype="text/plain">
+          <label>Business name
+            <input name="business" type="text" autocomplete="organization">
+          </label>
+          <p class="fine">Fields are 48px tall, pill-shaped, caret in blue. This sample does not send.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap legal">
+      <p>© <span id="yr">2026</span> PIXELPOP · <span class="ph">[Your name / company]</span></p>
+      <p><a href="index.html">Home</a></p>
+    </div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/system-page.js"></script>
+</body>
+</html>
