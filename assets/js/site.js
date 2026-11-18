@@ -6,6 +6,7 @@
   var bot = !!navigator.webdriver;
   var fine = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var wide = window.matchMedia && window.matchMedia("(min-width: 900px)").matches;
+  var lite = reduce || !wide || !fine;
 
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = String(new Date().getFullYear());
@@ -15,7 +16,7 @@
   var countEl = document.getElementById("loader-count");
   function ready() { root.classList.add("is-ready"); }
 
-  if (reduce || bot || !loader) {
+  if (reduce || bot || lite || !loader) {
     ready();
   } else {
     var start = performance.now();
@@ -59,8 +60,6 @@
 
   /* Phone / touch: skip the live canvas and the scroll-linked plate.
      Those two were the main sources of dropped frames on a weak CPU. */
-  var lite = reduce || !wide || !fine;
-
   /* ——— One light stream the length of the page (desktop only) ——— */
   var canvas = document.getElementById("stream");
   if (canvas && canvas.getContext && !lite && !bot) {
@@ -344,7 +343,7 @@
         else el.removeAttribute("inert");
       });
       if (open && !was) {
-        var first = menu.querySelector("a");
+        var first = menu.querySelector("a") || menu.querySelector("button");
         if (first) first.focus();
       } else if (!open && was && restore) btn.focus();
     }

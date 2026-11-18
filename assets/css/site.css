@@ -17,7 +17,8 @@ body {
   background: var(--bg);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
+  overflow-x: hidden;
+  touch-action: manipulation;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
@@ -233,7 +234,7 @@ p { text-wrap: pretty; margin: 0; }
   flex-direction: column;
   gap: 0.25rem;
 }
-body.menu-open .menu { display: flex; }
+body.menu-open .menu { display: flex; overflow-y: auto; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
 .menu a { font-size: var(--step-2); padding: 0.8rem 0.2rem; color: var(--fg); }
 @media (min-width: 980px) {
   .links-desk { display: flex; }
@@ -799,22 +800,27 @@ input::placeholder { color: #6e6e73; }
 }
 
 
-/* Phone / touch: turn off the live canvas, nav backdrop-filter, scroll-smooth
-   and content-visibility. Desktop (900px+, fine pointer) is unchanged. */
+/* Phone / touch: no live canvas, no nav blur, no intro overlay, no
+   opacity-0 reveals, no fixed wash (fixed body::before traps iOS scroll).
+   Desktop (900px+, fine pointer) is unchanged. */
 @media (max-width: 899px), (hover: none) and (pointer: coarse) {
   html { scroll-behavior: auto; }
   #stream { display: none !important; }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background:
+  .loader { display: none !important; }
+  .js .settle, .js .settle.in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  body {
+    background-image:
       radial-gradient(120% 80% at 86% 0%, rgba(43, 123, 255, 0.16), transparent 58%),
       radial-gradient(90% 55% at 100% 36%, rgba(255, 45, 138, 0.12), transparent 52%),
       radial-gradient(80% 50% at 78% 88%, rgba(32, 224, 192, 0.10), transparent 55%),
       radial-gradient(50% 40% at 8% 70%, rgba(191, 90, 242, 0.07), transparent 60%);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% 140vh;
   }
   .nav-bar {
     backdrop-filter: none;
@@ -833,11 +839,15 @@ input::placeholder { color: #6e6e73; }
     content-visibility: visible;
     contain-intrinsic-size: none;
   }
+  /* iOS zooms any focused field under 16px and the page then feels stuck. */
+  input[type="email"], input[type="text"], input[type="url"], textarea {
+    font-size: 16px;
+  }
 }
 @media (max-width: 899px) and (prefers-color-scheme: dark),
        (hover: none) and (pointer: coarse) and (prefers-color-scheme: dark) {
-  body::before {
-    background:
+  body {
+    background-image:
       radial-gradient(120% 80% at 86% 0%, rgba(43, 123, 255, 0.28), transparent 58%),
       radial-gradient(90% 55% at 100% 36%, rgba(255, 45, 138, 0.18), transparent 52%),
       radial-gradient(80% 50% at 78% 88%, rgba(32, 224, 192, 0.14), transparent 55%),
