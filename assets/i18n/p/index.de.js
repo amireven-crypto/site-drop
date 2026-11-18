@@ -173,6 +173,9 @@ I18N.add({
 "Choose 1": "1 Option wählen",
 "Start a Redesign": "Redesign starten",
 "Start a new website": "Neue Website starten",
-"Start an online store": "Online-Shop starten"
+"Start an online store": "Online-Shop starten",
+"Please enter your business name.": "Bitte geben Sie den Namen Ihres Unternehmens ein.",
+"Please enter a valid email address.": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+"Please enter a full web address, starting with https://": "Bitte geben Sie eine vollständige Webadresse ein, beginnend mit https://"
 }
 });

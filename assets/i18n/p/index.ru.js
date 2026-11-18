@@ -173,6 +173,9 @@ I18N.add({
 "Choose 1": "Выберите 1",
 "Start a Redesign": "Начать редизайн",
 "Start a new website": "Начать новый сайт",
-"Start an online store": "Начать интернет-магазин"
+"Start an online store": "Начать интернет-магазин",
+"Please enter your business name.": "Пожалуйста, укажите название бизнеса.",
+"Please enter a valid email address.": "Пожалуйста, укажите корректный адрес эл. почты.",
+"Please enter a full web address, starting with https://": "Пожалуйста, укажите полный веб-адрес, начиная с https://"
 }
 });

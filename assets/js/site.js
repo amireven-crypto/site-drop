@@ -272,6 +272,23 @@
   var form = document.getElementById("contact-form");
   var err = document.getElementById("form-error");
   if (form) {
+    /* Field hints in the page language (the browser's own bubble text follows the browser, not the site). */
+    var hints = {
+      business: "Please enter your business name.",
+      email: "Please enter a valid email address.",
+      site: "Please enter a full web address, starting with https://"
+    };
+    [].forEach.call(form.querySelectorAll("input[name]"), function (inp) {
+      var msg = hints[inp.name];
+      if (!msg) return;
+      inp.addEventListener("invalid", function () {
+        inp.setCustomValidity("");
+        if (!inp.validity.valid) inp.setCustomValidity(T(msg));
+      });
+      inp.addEventListener("input", function () { inp.setCustomValidity(""); });
+    });
+  }
+  if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (err) err.textContent = "";

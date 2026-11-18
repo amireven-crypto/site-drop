@@ -173,6 +173,9 @@ I18N.add({
 "Choose 1": "בחרו אחת",
 "Start a Redesign": "להתחיל עיצוב מחדש",
 "Start a new website": "להתחיל אתר חדש",
-"Start an online store": "להתחיל חנות אונליין"
+"Start an online store": "להתחיל חנות אונליין",
+"Please enter your business name.": "נא להזין את שם העסק.",
+"Please enter a valid email address.": "נא להזין כתובת אימייל תקינה.",
+"Please enter a full web address, starting with https://": "נא להזין כתובת אתר מלאה שמתחילה ב-https://"
 }
 });
