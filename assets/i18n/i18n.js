@@ -4,8 +4,12 @@
    The choice is kept only in this browser (localStorage), no cookies. */
 (function () {
   "use strict";
-  var KEY = "site-lang", SRC = "en", LANGS = ["de", "en", "he", "ru"];
+  var KEY = "site-lang", LANGS = ["de", "en", "he", "ru"];
   var doc = document, root = doc.documentElement;
+  var me = doc.currentScript;
+  var SRC = "en";
+  var srcAttr = me && me.getAttribute("data-src-lang");
+  if (srcAttr && LANGS.indexOf(srcAttr) > -1) SRC = srcAttr;
   var lang = SRC;
   try {
     var q = new URLSearchParams(location.search).get("lang");
@@ -22,7 +26,6 @@
 
   var dict = null;
   /* Load this page's strings for the chosen language before the body is parsed. */
-  var me = doc.currentScript;
   if (lang !== SRC && me && me.getAttribute("data-page")) {
     var base = me.getAttribute("src").replace(/i18n\.js(\?.*)?$/, "");
     var v = (me.getAttribute("src").match(/\?.*$/) || [""])[0];
@@ -157,7 +160,7 @@
         if (to === lang) return;
         try { localStorage.setItem(KEY, to); } catch (err) {}
         var u = new URL(location.href);
-        if (u.searchParams.has("lang")) u.searchParams.set("lang", to);
+        u.searchParams.set("lang", to);
         location.replace(u.toString());
       });
     }
@@ -165,6 +168,7 @@
 
   window.I18N = {
     lang: lang,
+    src: SRC,
     langs: LANGS,
     t: t,
     add: function (all) {

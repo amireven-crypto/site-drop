@@ -337,7 +337,7 @@
       var was = document.body.classList.contains("menu-open");
       document.body.classList.toggle("menu-open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      btn.setAttribute("aria-label", open ? T("Close menu") : T("Open menu"));
       behind.forEach(function (el) {
         if (open) el.setAttribute("inert", "");
         else el.removeAttribute("inert");

@@ -1,9 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://amireven-crypto.github.io/site-drop/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/"/>
   </url>
   <url>
     <loc>https://amireven-crypto.github.io/site-drop/design-system.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/design-system.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/design-system.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/design-system.html?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/design-system.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/design-system.html"/>
+  </url>
+  <url>
+    <loc>https://amireven-crypto.github.io/site-drop/webdesign-wien/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/webdesign-wien/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/webdesign-wien/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/webdesign-wien/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/webdesign-wien/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/webdesign-wien/"/>
+  </url>
+  <url>
+    <loc>https://amireven-crypto.github.io/site-drop/website-erstellen-lassen-wien/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/website-erstellen-lassen-wien/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/website-erstellen-lassen-wien/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/website-erstellen-lassen-wien/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/website-erstellen-lassen-wien/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/website-erstellen-lassen-wien/"/>
+  </url>
+  <url>
+    <loc>https://amireven-crypto.github.io/site-drop/website-redesign-wien/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/website-redesign-wien/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/website-redesign-wien/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/website-redesign-wien/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/website-redesign-wien/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/website-redesign-wien/"/>
+  </url>
+  <url>
+    <loc>https://amireven-crypto.github.io/site-drop/restaurant-website-wien/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/restaurant-website-wien/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/restaurant-website-wien/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/restaurant-website-wien/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/restaurant-website-wien/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/restaurant-website-wien/"/>
+  </url>
+  <url>
+    <loc>https://amireven-crypto.github.io/site-drop/friseur-website-wien/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/friseur-website-wien/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/friseur-website-wien/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/friseur-website-wien/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/friseur-website-wien/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/friseur-website-wien/"/>
+  </url>
+  <url>
+    <loc>https://amireven-crypto.github.io/site-drop/onlineshop-erstellen-wien/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/onlineshop-erstellen-wien/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/onlineshop-erstellen-wien/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/onlineshop-erstellen-wien/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/onlineshop-erstellen-wien/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/onlineshop-erstellen-wien/"/>
+  </url>
+  <url>
+    <loc>https://amireven-crypto.github.io/site-drop/web-design-vienna/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amireven-crypto.github.io/site-drop/web-design-vienna/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amireven-crypto.github.io/site-drop/web-design-vienna/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://amireven-crypto.github.io/site-drop/web-design-vienna/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://amireven-crypto.github.io/site-drop/web-design-vienna/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amireven-crypto.github.io/site-drop/web-design-vienna/"/>
   </url>
 </urlset>

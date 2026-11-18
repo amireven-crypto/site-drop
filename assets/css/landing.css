@@ -1,0 +1,187 @@
+/* Landing pages for PIXELPOP service topics.
+   Reuses tokens and site.css. Do not change the candy wordmark, prices or Impressum. */
+
+.landing .hero-copy h1 {
+  font-size: clamp(2rem, 4.4vw, 3.35rem);
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+.landing-hero {
+  padding-top: calc(var(--nav-h) + var(--space-6));
+  padding-bottom: var(--space-6);
+  min-height: 0;
+}
+
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  color: var(--faint);
+  font-size: var(--step--1);
+}
+
+.crumb li { display: inline-flex; align-items: center; gap: 0.5rem; }
+.crumb li:not(:last-child)::after {
+  content: "/";
+  color: var(--faint);
+  opacity: 0.7;
+}
+.crumb a { color: var(--muted); text-decoration: none; }
+.crumb a:hover { color: var(--fg); }
+.crumb [aria-current="page"] { color: var(--fg); }
+
+.landing-lede {
+  font-size: var(--step-1, 1.15rem);
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.prose {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 42rem;
+}
+.prose p, .prose li { color: var(--muted); line-height: 1.6; }
+.prose a { color: var(--blue-text); }
+.prose h2 { margin-top: 0.4rem; text-wrap: balance; }
+
+.feature-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.2rem 0 0;
+  list-style: none;
+  padding: 0;
+}
+.feature-grid li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 22px);
+  padding: 1rem 1.1rem 1.15rem;
+  box-shadow: var(--shadow-soft, var(--shadow));
+}
+.feature-grid h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
+.feature-grid p { margin: 0; color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+
+@media (min-width: 700px) {
+  .feature-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.work-tease {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: 1rem;
+}
+.work-tease article {
+  display: grid;
+  gap: 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 22px);
+  padding: 1rem;
+  box-shadow: var(--shadow-soft, var(--shadow));
+}
+.work-tease img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+.work-tease .note, .work-tease .tags { margin-top: 0.6rem; }
+.work-tease p { color: var(--muted); }
+
+@media (min-width: 800px) {
+  .work-tease article { grid-template-columns: 1.1fr 0.9fr; align-items: center; }
+}
+
+.related {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+.related a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+}
+.related a:hover { border-color: var(--blue); }
+.related strong { display: block; color: var(--fg); }
+.related span { display: block; color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem; }
+
+@media (min-width: 700px) {
+  .related { grid-template-columns: 1fr 1fr; }
+}
+
+.steps {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+.steps li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--blue);
+  background: var(--card);
+  border-radius: 0 14px 14px 0;
+}
+.steps strong { color: var(--fg); }
+.steps span { color: var(--muted); }
+
+[dir="rtl"] .steps li {
+  border-left: 0;
+  border-right: 3px solid var(--blue);
+  border-radius: 14px 0 0 14px;
+}
+
+.foot-topics {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+.foot-topics .fine { margin-bottom: 0.55rem; }
+.foot-topics ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.55rem;
+}
+.foot-topics a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+.foot-topics a:hover { color: var(--fg); border-color: var(--blue); }
+.foot-topics a[aria-current="page"] {
+  color: var(--fg);
+  border-color: var(--fg);
+}
+
+@media (min-width: 900px) {
+  .landing-hero { padding-top: calc(var(--nav-h) + var(--space-7)); }
+}
+
+@media (max-width: 389px) {
+  .landing .hero-copy h1 { font-size: 1.85rem; }
+  .feature-grid, .related { grid-template-columns: 1fr; }
+}
