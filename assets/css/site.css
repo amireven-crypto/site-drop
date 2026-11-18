@@ -988,3 +988,7 @@ input::placeholder { color: #6e6e73; }
   content-visibility: auto;
   contain-intrinsic-size: auto 720px;
 }
+
+/* QA 2026-11-18: on the pink contact card the "Required/Optional" hints (3.7:1) and the [placeholder] text (1.8:1) failed AA; full-strength ink reaches 4.8:1. Colour only. */
+.form-card .field-flag { opacity: 1; }
+.form-card .ph, .plate-card .ph { color: #1d1d1f; }
