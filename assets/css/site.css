@@ -578,7 +578,7 @@ section { position: relative; padding: var(--space-8) 0; }
 
 /* Scope meter */
 .scope-top { display: grid; gap: var(--space-5); }
-.meter-card, .quote-card, .plan {
+.meter-card, .quote-card {
   background: var(--card);
   border: 1px solid var(--card-stroke);
   border-radius: var(--radius-md);
@@ -630,16 +630,40 @@ input[type="range"]::-moz-range-thumb {
   font-weight: 560;
   margin: 0.35rem 0;
 }
-.plans { display: grid; gap: 0.8rem; margin-top: var(--space-5); }
-.plan ul { margin: 0.8rem 0 1rem; padding: 0; list-style: none; display: grid; gap: 0.35rem; color: var(--muted); }
+.plans {
+  display: grid;
+  gap: 0;
+  margin-top: var(--space-5);
+  background: var(--card);
+  border: 1px solid var(--card-stroke);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft), var(--inset);
+  padding: 0.85rem 1.15rem 0.35rem;
+}
+.plans > .fine { margin: 0 0 0.15rem; }
+.plan {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+}
+.plan:first-of-type { border-top: 0; }
+.plan input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin: 0.35rem 0 0;
+  accent-color: var(--blue-link);
+  flex-shrink: 0;
+}
+.plan input[type="radio"]:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.plan:has(input:checked) h3 { color: var(--blue-text); }
+.plan-body { min-width: 0; }
+.plan ul { margin: 0.55rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; color: var(--muted); }
 .plan li { padding-left: 1.1rem; position: relative; }
 .plan li::before { content: ""; position: absolute; left: 0; top: 0.5rem; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--mint); }
-#scope[data-scope="redesign"] .plan[data-for="redesign"],
-#scope[data-scope="new"] .plan[data-for="new"],
-#scope[data-scope="store"] .plan[data-for="store"] {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 1px var(--blue), var(--shadow);
-}
 .scope-only { display: none; }
 #scope[data-scope="redesign"] .scope-only[data-for="redesign"],
 #scope[data-scope="new"] .scope-only[data-for="new"],
@@ -667,6 +691,12 @@ input[type="range"]::-moz-range-thumb {
 .form-card .fine, .plate-card .fine { color: #1d1d1f; }
 form { display: grid; gap: 0.7rem; }
 label { display: grid; gap: 0.3rem; font-size: var(--step--1); font-weight: 560; }
+.label-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.55rem; }
+.field-flag {
+  font-weight: 500;
+  color: var(--faint);
+}
+.form-card .field-flag { color: #1d1d1f; opacity: 0.78; }
 input[type="email"], input[type="text"], input[type="url"] {
   min-height: 48px;
   border-radius: var(--radius-pill);
@@ -777,7 +807,6 @@ input::placeholder { color: #6e6e73; }
   .dash { grid-template-columns: 1.1fr 0.9fr; align-items: stretch; }
   .board { grid-template-columns: 1.3fr 0.7fr; }
   .scope-top { grid-template-columns: 1.35fr 0.8fr; align-items: stretch; }
-  .plans { grid-template-columns: repeat(3, 1fr); }
   .close-grid { grid-template-columns: 0.8fr 1.2fr; }
   .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
   .shots { grid-template-columns: 1fr 120px; }

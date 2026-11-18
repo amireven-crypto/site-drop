@@ -102,6 +102,7 @@ I18N.add({
 "Close menu": "סגירת התפריט",
 "Redesign. Quoted after a preview.": "עיצוב מחדש. הצעת מחיר אחרי תצוגה מקדימה.",
 "Online store. Quoted after a preview.": "חנות אונליין. הצעת מחיר אחרי תצוגה מקדימה.",
-"Designed and built with AI assistance.": "עוצב ונבנה בסיוע בינה מלאכותית."
+"Designed and built with AI assistance.": "עוצב ונבנה בסיוע בינה מלאכותית.",
+"Required": "חובה"
 }
 });

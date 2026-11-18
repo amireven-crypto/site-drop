@@ -243,6 +243,9 @@
   var meter = document.getElementById("meter");
   var T = window.__t || function (s) { return s; };
   var names = ["Redesign", "New website", "Online store"];
+  var ctaLabels = ["Start a Redesign", "Start a new website", "Start an online store"];
+  var cta = document.getElementById("scope-cta");
+  var picks = document.querySelectorAll("input[name='scope-pick']");
   function setScope(index) {
     var i = Math.max(0, Math.min(2, index));
     if (scope) scope.setAttribute("data-scope", ["redesign", "new", "store"][i]);
@@ -251,10 +254,21 @@
       meter.setAttribute("aria-valuenow", String(i));
       meter.setAttribute("aria-valuetext", T(names[i] + ". Quoted after a preview."));
     }
+    for (var r = 0; r < picks.length; r++) {
+      picks[r].checked = Number(picks[r].value) === i;
+    }
+    if (cta) cta.textContent = T(ctaLabels[i]);
   }
   if (meter) {
     setScope(Number(meter.value || 1));
     meter.addEventListener("input", function () { setScope(Number(meter.value)); });
+  } else if (picks.length) {
+    var start = 1;
+    for (var r = 0; r < picks.length; r++) if (picks[r].checked) start = Number(picks[r].value);
+    setScope(start);
+  }
+  for (var r = 0; r < picks.length; r++) {
+    picks[r].addEventListener("change", function () { setScope(Number(this.value)); });
   }
 
   /* ——— Contact form opens the visitor's mail with the note ——— */

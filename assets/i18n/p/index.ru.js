@@ -167,6 +167,12 @@ I18N.add({
 "Website for": "Сайт для",
 "Close menu": "Закрыть меню",
 "This form opens your email app. Nothing is stored on this site. To ask us to delete a message you sent, email pixelpopsite@gmail.com.": "Эта форма открывает вашу почтовую программу. На сайте ничего не сохраняется. Чтобы попросить удалить отправленное сообщение, напишите на pixelpopsite@gmail.com.",
-"Designed and built with AI assistance.": "Дизайн и разработка с помощью ИИ."
+"Designed and built with AI assistance.": "Дизайн и разработка с помощью ИИ.",
+"Required": "Обязательно",
+"Optional": "Необязательно",
+"Choose 1": "Выберите 1",
+"Start a Redesign": "Начать редизайн",
+"Start a new website": "Начать новый сайт",
+"Start an online store": "Начать интернет-магазин"
 }
 });

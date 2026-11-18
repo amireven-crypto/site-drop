@@ -167,6 +167,12 @@ I18N.add({
 "Website for": "אתר עבור",
 "Close menu": "סגירת התפריט",
 "This form opens your email app. Nothing is stored on this site. To ask us to delete a message you sent, email pixelpopsite@gmail.com.": "הטופס הזה פותח את אפליקציית האימייל שלכם. שום דבר לא נשמר באתר. כדי לבקש שנמחק הודעה ששלחתם, כתבו אל pixelpopsite@gmail.com.",
-"Designed and built with AI assistance.": "עוצב ונבנה בסיוע בינה מלאכותית."
+"Designed and built with AI assistance.": "עוצב ונבנה בסיוע בינה מלאכותית.",
+"Required": "חובה",
+"Optional": "רשות",
+"Choose 1": "בחרו אחת",
+"Start a Redesign": "להתחיל עיצוב מחדש",
+"Start a new website": "להתחיל אתר חדש",
+"Start an online store": "להתחיל חנות אונליין"
 }
 });

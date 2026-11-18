@@ -102,6 +102,7 @@ I18N.add({
 "Close menu": "Menü schließen",
 "Redesign. Quoted after a preview.": "Redesign. Angebot nach der Vorschau.",
 "Online store. Quoted after a preview.": "Online-Shop. Angebot nach der Vorschau.",
-"Designed and built with AI assistance.": "Gestaltet und umgesetzt mit Unterstützung von KI."
+"Designed and built with AI assistance.": "Gestaltet und umgesetzt mit Unterstützung von KI.",
+"Required": "Erforderlich"
 }
 });

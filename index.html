@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'none'; form-action 'self' mailto:; frame-src 'none'; worker-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script src="assets/i18n/i18n.js?v=20261118" data-page="index"></script>
+  <script src="assets/i18n/i18n.js?v=20261118-ux" data-page="index"></script>
   <title>PIXELPOP | Websites for businesses</title>
   <meta name="description" content="PIXELPOP designs and builds modern, mobile-friendly websites for businesses — new sites, redesigns, online stores, booking and maps integration.">
   <meta name="color-scheme" content="light dark">
@@ -33,8 +33,8 @@
   <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png?ver=20261113-qa">
   <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20261118">
-  <link rel="stylesheet" href="assets/css/site.css?v=20261118">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20261118-ux">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261118-ux">
   <script src="assets/js/boot.js"></script>
 </head>
 <body>
@@ -364,43 +364,50 @@
             <p class="scope-only" data-for="redesign">Your content stays, and the site gets a fresh, modern look.</p>
             <p class="scope-only" data-for="new">A new site, built from the ground up for the business.</p>
             <p class="scope-only" data-for="store">Product pages, categories, bundles and a cart.</p>
-            <a class="btn primary push" href="#contact">Start a project</a>
+            <a class="btn primary push" id="scope-cta" href="#contact">Start a new website</a>
           </div>
         </div>
-        <div class="plans">
-          <article class="plan" data-for="redesign">
-            <h3>Redesign</h3>
-            <p class="fine">content stays</p>
-            <ul>
-              <li>Your words and photos stay</li>
-              <li>Phone and desktop</li>
-              <li>Preview before launch</li>
-              <li>Booking, maps and tap-to-call where you need them</li>
-            </ul>
-            <a class="btn ghost sm" href="#contact">Ask for this</a>
-          </article>
-          <article class="plan" data-for="new">
-            <h3>New website</h3>
-            <p class="fine">from the ground up</p>
-            <ul>
-              <li>Designed for the brand</li>
-              <li>Phone and desktop</li>
-              <li>Preview before launch</li>
-              <li>Updates after launch</li>
-            </ul>
-            <a class="btn primary sm" href="#contact">Ask for this</a>
-          </article>
-          <article class="plan" data-for="store">
-            <h3>Online store</h3>
-            <p class="fine">browse, cart, checkout later</p>
-            <ul>
-              <li>Product pages and categories</li>
-              <li>Bundles and a cart</li>
-              <li>Phone and desktop</li>
-              <li>Legal page templates when a shop needs them</li>
-            </ul>
-            <a class="btn ghost sm" href="#contact">Ask for this</a>
-          </article>
+        <div class="plans" role="radiogroup" aria-labelledby="scope-choice-label">
+          <p class="fine" id="scope-choice-label">Choose 1</p>
+          <label class="plan" data-for="redesign">
+            <input type="radio" name="scope-pick" value="0">
+            <span class="plan-body">
+              <h3>Redesign</h3>
+              <p class="fine">content stays</p>
+              <ul>
+                <li>Your words and photos stay</li>
+                <li>Phone and desktop</li>
+                <li>Preview before launch</li>
+                <li>Booking, maps and tap-to-call where you need them</li>
+              </ul>
+            </span>
+          </label>
+          <label class="plan" data-for="new">
+            <input type="radio" name="scope-pick" value="1" checked>
+            <span class="plan-body">
+              <h3>New website</h3>
+              <p class="fine">from the ground up</p>
+              <ul>
+                <li>Designed for the brand</li>
+                <li>Phone and desktop</li>
+                <li>Preview before launch</li>
+                <li>Updates after launch</li>
+              </ul>
+            </span>
+          </label>
+          <label class="plan" data-for="store">
+            <input type="radio" name="scope-pick" value="2">
+            <span class="plan-body">
+              <h3>Online store</h3>
+              <p class="fine">browse, cart, checkout later</p>
+              <ul>
+                <li>Product pages and categories</li>
+                <li>Bundles and a cart</li>
+                <li>Phone and desktop</li>
+                <li>Legal page templates when a shop needs them</li>
+              </ul>
+            </span>
+          </label>
         </div>
       </div>
     </section>
@@ -422,14 +429,14 @@
           <h2 id="ct-h">Let’s make your site <em>fresh.</em></h2>
           <p>Send a message with your business name and current website (if you have one).</p>
           <form id="contact-form" action="mailto:pixelpopsite@gmail.com" method="post" enctype="text/plain">
-            <label>Business name
+            <label><span class="label-line">Business name <span class="field-flag">Required</span></span>
               <input name="business" type="text" autocomplete="organization" required maxlength="120">
             </label>
-            <label>Email
+            <label><span class="label-line">Email <span class="field-flag">Required</span></span>
               <input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="you@the-business.com">
             </label>
-            <label>Current website, if you have one
-              <input name="site" type="url" inputmode="url" placeholder="https://" maxlength="200">
+            <label><span class="label-line">Current website, if you have one <span class="field-flag">Optional</span></span>
+              <input name="site" type="url" inputmode="url" dir="ltr" placeholder="https://" maxlength="200">
             </label>
             <p class="form-error" id="form-error" role="alert"></p>
             <div class="form-row">

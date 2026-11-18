@@ -102,6 +102,7 @@ I18N.add({
 "Close menu": "Закрыть меню",
 "Redesign. Quoted after a preview.": "Редизайн. Смета после превью.",
 "Online store. Quoted after a preview.": "Интернет-магазин. Смета после превью.",
-"Designed and built with AI assistance.": "Дизайн и разработка с помощью ИИ."
+"Designed and built with AI assistance.": "Дизайн и разработка с помощью ИИ.",
+"Required": "Обязательно"
 }
 });
