@@ -57,12 +57,16 @@
     }
   }
 
-  /* ——— One light stream the length of the page ——— */
+  /* Phone / touch: skip the live canvas and the scroll-linked plate.
+     Those two were the main sources of dropped frames on a weak CPU. */
+  var lite = reduce || !wide || !fine;
+
+  /* ——— One light stream the length of the page (desktop only) ——— */
   var canvas = document.getElementById("stream");
-  if (canvas && canvas.getContext) {
+  if (canvas && canvas.getContext && !lite && !bot) {
     var ctx = canvas.getContext("2d", { alpha: true, desynchronized: true });
     var dpr = 1;
-    var running = !reduce && !bot;
+    var running = true;
     var scrolling = false;
     var scrollIdle = 0;
     var lastDraw = 0;
@@ -153,7 +157,7 @@
   var plate = document.querySelector(".plate-section");
   var plateCard = plate ? plate.querySelector(".plate-card") : null;
   var plateLogo = document.querySelector(".nav .mark");
-  if (plate && plateCard && !reduce) {
+  if (plate && plateCard && !lite && !bot) {
     var ticking = false;
     function plateFrame() {
       ticking = false;
@@ -187,6 +191,11 @@
     window.addEventListener("resize", plateFrame, { passive: true });
   } else if (plate) {
     plate.setAttribute("data-open", "10");
+    plate.classList.add("is-live");
+    if (plateCard) {
+      plateCard.style.transform = "none";
+      plateCard.style.opacity = "1";
+    }
   }
 
   /* ——— Tilting glass ——— */

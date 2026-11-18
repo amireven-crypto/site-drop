@@ -175,9 +175,21 @@
   }
 }
 
-@media (max-width: 699px) {
-  :root { --glass-blur: 10px; --nav-h: 64px; --stream-alpha: 0.32; }
+@media (max-width: 899px) {
+  :root {
+    --glass-blur: 0px;
+    --nav-h: 64px;
+    --stream-alpha: 0;
+    --shadow: 0 8px 22px rgba(29, 29, 31, 0.08);
+    --shadow-soft: 0 4px 12px rgba(29, 29, 31, 0.06);
+    --nav-bg: var(--bg);
+  }
 }
-@media (max-width: 699px) and (prefers-color-scheme: dark) {
-  :root { --stream-alpha: 0.72; }
+@media (max-width: 899px) and (prefers-color-scheme: dark) {
+  :root {
+    --stream-alpha: 0;
+    --shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.28);
+    --nav-bg: var(--bg);
+  }
 }
