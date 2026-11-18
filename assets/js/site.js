@@ -241,6 +241,7 @@
   /* ——— Scope meter ——— */
   var scope = document.getElementById("scope");
   var meter = document.getElementById("meter");
+  var T = window.__t || function (s) { return s; };
   var names = ["Redesign", "New website", "Online store"];
   function setScope(index) {
     var i = Math.max(0, Math.min(2, index));
@@ -248,7 +249,7 @@
     if (meter) {
       meter.value = String(i);
       meter.setAttribute("aria-valuenow", String(i));
-      meter.setAttribute("aria-valuetext", names[i] + ". Quoted after a preview.");
+      meter.setAttribute("aria-valuetext", T(names[i] + ". Quoted after a preview."));
     }
   }
   if (meter) {
@@ -264,7 +265,7 @@
       e.preventDefault();
       if (err) err.textContent = "";
       if (!form.checkValidity()) {
-        if (err) err.textContent = "Add a business name and an email so the note can be sent.";
+        if (err) err.textContent = T("Add a business name and an email so the note can be sent.");
         form.reportValidity();
         return;
       }
@@ -274,17 +275,18 @@
         var key = scope.getAttribute("data-scope");
         scopeName = key === "redesign" ? "Redesign" : key === "store" ? "Online store" : "New website";
       }
+      scopeName = T(scopeName);
       var business = String(data.get("business") || "").trim();
       var email = String(data.get("email") || "").trim();
       var site = String(data.get("site") || "").trim();
       var body = [
-        "Business: " + business,
-        "Email: " + email,
-        "Current website: " + (site || "none yet"),
-        "Scope: " + scopeName
+        T("Business:") + " " + business,
+        T("Email:") + " " + email,
+        T("Current website:") + " " + (site || T("none yet")),
+        T("Scope:") + " " + scopeName
       ].join("\n");
       var href = "mailto:pixelpopsite@gmail.com?subject=" +
-        encodeURIComponent("Website for " + business) +
+        encodeURIComponent(T("Website for") + " " + business) +
         "&body=" + encodeURIComponent(body);
       window.location.href = href;
     });
@@ -319,7 +321,7 @@
       if (!document.body.classList.contains("menu-open")) return;
       if (e.key === "Escape") setOpen(false, true);
       if (e.key === "Tab") {
-        var items = [btn].concat([].slice.call(menu.querySelectorAll("a")));
+        var items = [btn].concat([].slice.call(menu.querySelectorAll("a, button")));
         var first = items[0];
         var last = items[items.length - 1];
         if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }

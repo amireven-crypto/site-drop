@@ -5,6 +5,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'none'; form-action 'self' mailto:; frame-src 'none'; worker-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="assets/i18n/i18n.js?v=20261118" data-page="index"></script>
   <title>PIXELPOP | Websites for businesses</title>
   <meta name="description" content="PIXELPOP designs and builds modern, mobile-friendly websites for businesses — new sites, redesigns, online stores, booking and maps integration.">
   <meta name="color-scheme" content="light dark">
@@ -32,8 +33,8 @@
   <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png?ver=20261113-qa">
   <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20261118">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261118">
   <script src="assets/js/boot.js"></script>
 </head>
 <body>
@@ -83,6 +84,12 @@
         <a href="#scope">Scope</a>
       </nav>
       <div class="nav-end">
+        <div class="lang lang-desk" role="group" aria-label="Language">
+          <button type="button" data-set-lang="de" lang="de" aria-label="Deutsch">DE</button>
+          <button type="button" data-set-lang="en" lang="en" aria-label="English">EN</button>
+          <button type="button" data-set-lang="he" lang="he" aria-label="עברית">HE</button>
+          <button type="button" data-set-lang="ru" lang="ru" aria-label="Русский">RU</button>
+        </div>
         <p class="status"><b></b> Preview before launch</p>
         <a class="btn primary sm" href="#contact">Start a project</a>
         <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
@@ -92,6 +99,12 @@
     </div>
   </header>
   <nav class="menu" id="menu" aria-label="Mobile">
+    <div class="lang lang-menu" role="group" aria-label="Language">
+        <button type="button" data-set-lang="de" lang="de" aria-label="Deutsch">DE</button>
+        <button type="button" data-set-lang="en" lang="en" aria-label="English">EN</button>
+        <button type="button" data-set-lang="he" lang="he" aria-label="עברית">HE</button>
+        <button type="button" data-set-lang="ru" lang="ru" aria-label="Русский">RU</button>
+      </div>
     <a href="#work">Work</a>
     <a href="#services">Services</a>
     <a href="#process">Process</a>
@@ -210,7 +223,7 @@
           <div class="work-copy">
             <p class="kicker">Redesign concept · Barbershop · Vienna</p>
             <h3>The Barber Crew</h3>
-            <p>A modern redesign of a barbershop website in Vienna’s 2nd district. A dark, editorial look with the full price list, online booking through Treatwell, a tap-to-call phone number and one-tap directions in Google Maps and Apple Maps.</p>
+            <p>A modern redesign of a barbershop website in Vienna’s 2nd district. A deep-blue look with the full price list, online booking through Treatwell, a tap-to-call phone number and one-tap directions in Google Maps and Apple Maps.</p>
             <ul class="tags">
               <li>Redesign</li><li>Mobile-first</li><li>Online booking</li><li>Google &amp; Apple Maps</li><li>Tap to call</li>
             </ul>
@@ -222,10 +235,10 @@
           </div>
           <div class="shots">
             <a class="shot" href="https://amireven-crypto.github.io/demo-barber-crew-monday/" target="_blank" rel="noopener">
-              <img src="assets/work/barbercrew-desktop.webp" alt="The Barber Crew redesign — desktop homepage with dark hero, booking button and phone number" width="1440" height="900" loading="lazy">
+              <img src="assets/work/barbercrew-desktop.webp?ver=20261118" alt="The Barber Crew redesign — desktop homepage with a deep-blue dotted hero, booking buttons and a haircut photo" width="1440" height="900" loading="lazy">
             </a>
             <a class="phone" href="https://amireven-crypto.github.io/demo-barber-crew-monday/" target="_blank" rel="noopener">
-              <img src="assets/work/barbercrew-mobile.webp" alt="The Barber Crew redesign on a phone" width="390" height="844" loading="lazy">
+              <img src="assets/work/barbercrew-mobile.webp?ver=20261118" alt="The Barber Crew redesign on a phone" width="390" height="844" loading="lazy">
             </a>
           </div>
         </article>
@@ -245,10 +258,10 @@
           </div>
           <div class="shots">
             <a class="shot" href="https://amireven-crypto.github.io/freshdrop/" target="_blank" rel="noopener">
-              <img src="assets/work/freshdrop-desktop.webp" alt="FreshDrop Shop — desktop homepage of the demo online store" width="1440" height="900" loading="lazy">
+              <img src="assets/work/freshdrop-desktop.webp?ver=20261118" alt="FreshDrop Shop — desktop homepage of the demo online store" width="1440" height="900" loading="lazy">
             </a>
             <a class="phone" href="https://amireven-crypto.github.io/freshdrop/" target="_blank" rel="noopener">
-              <img src="assets/work/freshdrop-mobile.webp" alt="FreshDrop Shop on a phone" width="390" height="844" loading="lazy">
+              <img src="assets/work/freshdrop-mobile.webp?ver=20261118" alt="FreshDrop Shop on a phone" width="390" height="844" loading="lazy">
             </a>
           </div>
         </article>
@@ -262,17 +275,17 @@
               <li>Redesign</li><li>Multilingual</li><li>Accessible</li><li>Senior-friendly</li><li>Mobile-first</li>
             </ul>
             <div class="ctas">
-              <a class="btn primary sm" href="https://amireven-crypto.github.io/ikg-wien-preview/?v=1.9.3" target="_blank" rel="noopener">View live demo <span aria-hidden="true">↗</span></a>
+              <a class="btn primary sm" href="https://amireven-crypto.github.io/ikg-wien-preview/" target="_blank" rel="noopener">View live demo <span aria-hidden="true">↗</span></a>
               <a class="btn ghost sm" href="https://www.ikg-wien.at/" target="_blank" rel="noopener">Original site <span aria-hidden="true">↗</span></a>
             </div>
             <p class="note">Concept demo, not an official IKG Wien site.</p>
           </div>
           <div class="shots">
-            <a class="shot" href="https://amireven-crypto.github.io/ikg-wien-preview/?v=1.9.3" target="_blank" rel="noopener">
-              <img src="assets/work/ikg-wien-desktop.webp?ver=20261113-qa" alt="IKG Wien concept redesign — desktop homepage with a full-bleed hero video" width="1440" height="900" loading="lazy">
+            <a class="shot" href="https://amireven-crypto.github.io/ikg-wien-preview/" target="_blank" rel="noopener">
+              <img src="assets/work/ikg-wien-desktop.webp?ver=20261118" alt="IKG Wien concept redesign — desktop homepage with a full-bleed hero video" width="1440" height="900" loading="lazy">
             </a>
-            <a class="phone" href="https://amireven-crypto.github.io/ikg-wien-preview/?v=1.9.3" target="_blank" rel="noopener">
-              <img src="assets/work/ikg-wien-mobile.webp?ver=20261113-qa" alt="IKG Wien concept redesign on a phone" width="390" height="844" loading="lazy">
+            <a class="phone" href="https://amireven-crypto.github.io/ikg-wien-preview/" target="_blank" rel="noopener">
+              <img src="assets/work/ikg-wien-mobile.webp?ver=20261118" alt="IKG Wien concept redesign on a phone" width="390" height="844" loading="lazy">
             </a>
           </div>
         </article>
@@ -424,6 +437,7 @@
               <a href="mailto:pixelpopsite@gmail.com?subject=Website%20for%20my%20business">pixelpopsite@gmail.com</a>
             </div>
           </form>
+          <p class="fine privacy-note">This form opens your email app. Nothing is stored on this site. To ask us to delete a message you sent, email pixelpopsite@gmail.com.</p>
           <div class="contacts">
             <p><span class="fine">Phone / WhatsApp</span><br><span class="ph">[Your phone / WhatsApp]</span></p>
             <p><span class="fine">Instagram</span><br><span class="ph">[Your Instagram]</span></p>
@@ -474,9 +488,11 @@
         <p>© <span id="yr">2026</span> PIXELPOP · <span class="ph">[Your name / company]</span></p>
         <p>Preview before launch · Phone and desktop</p>
       </div>
+      <p class="legal-extra">Designed and built with AI assistance.</p>
     </div>
   </footer>
 
+  <script src="assets/i18n/apply.js"></script>
   <script src="assets/js/site.js"></script>
 </body>
 </html>
