@@ -60,11 +60,14 @@
   /* ——— One light stream the length of the page ——— */
   var canvas = document.getElementById("stream");
   if (canvas && canvas.getContext) {
-    var ctx = canvas.getContext("2d", { alpha: true });
+    var ctx = canvas.getContext("2d", { alpha: true, desynchronized: true });
     var dpr = 1;
     var running = !reduce && !bot;
+    var scrolling = false;
+    var scrollIdle = 0;
+    var lastDraw = 0;
     function fit() {
-      dpr = Math.min(window.innerWidth < 700 ? 1.15 : 1.5, window.devicePixelRatio || 1);
+      dpr = Math.min(window.innerWidth < 700 ? 1 : 1.25, window.devicePixelRatio || 1);
       canvas.width = Math.max(1, Math.floor(window.innerWidth * dpr));
       canvas.height = Math.max(1, Math.floor(window.innerHeight * dpr));
     }
@@ -72,7 +75,7 @@
     function ribbon(time, scrollP, index, alpha) {
       var w = canvas.width;
       var h = canvas.height;
-      var steps = window.innerWidth < 700 ? 48 : 80;
+      var steps = window.innerWidth < 700 ? 28 : 40;
       ctx.beginPath();
       for (var i = 0; i <= steps; i++) {
         var t = i / steps;
@@ -85,34 +88,44 @@
       }
       ctx.strokeStyle = colors[index % colors.length];
       ctx.globalAlpha = alpha;
-      ctx.lineWidth = (index === 0 ? 2.4 : 1.15) * dpr;
-      ctx.shadowColor = colors[index % colors.length];
-      ctx.shadowBlur = (index === 0 ? 16 : 8) * dpr;
+      ctx.lineWidth = (index === 0 ? 2.2 : 1.1) * dpr;
       ctx.stroke();
       ctx.globalAlpha = 1;
     }
     function frame(time) {
+      if (!running) return;
+      var minDelta = scrolling ? 16 : 33;
+      if (time - lastDraw < minDelta) {
+        requestAnimationFrame(frame);
+        return;
+      }
+      lastDraw = time;
       var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
       var p = (window.scrollY || 0) / max;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
       ctx.globalCompositeOperation = "source-over";
-      var n = window.innerWidth < 700 ? 2 : 4;
+      var n = window.innerWidth < 700 ? 2 : 3;
       for (var i = 0; i < n; i++) ribbon(time, p, i, i === 0 ? 0.85 : 0.45);
-      ctx.shadowBlur = 0;
       var ky = (0.12 + p * 0.72) * canvas.height;
       var kx = canvas.width * (0.62 - p * 0.1);
-      var g = ctx.createRadialGradient(kx, ky, 0, kx, ky, canvas.width * 0.22);
-      g.addColorStop(0, "rgba(43,123,255,0.28)");
-      g.addColorStop(0.45, "rgba(255,45,138,0.10)");
+      var g = ctx.createRadialGradient(kx, ky, 0, kx, ky, canvas.width * 0.16);
+      g.addColorStop(0, "rgba(43,123,255,0.22)");
+      g.addColorStop(0.5, "rgba(255,45,138,0.08)");
       g.addColorStop(1, "rgba(255,45,138,0)");
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      if (running) requestAnimationFrame(frame);
+      requestAnimationFrame(frame);
+    }
+    function onStreamScroll() {
+      scrolling = true;
+      clearTimeout(scrollIdle);
+      scrollIdle = setTimeout(function () { scrolling = false; }, 160);
     }
     fit();
     window.addEventListener("resize", fit, { passive: true });
+    window.addEventListener("scroll", onStreamScroll, { passive: true });
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) running = false;
       else if (!reduce && !running) { running = true; requestAnimationFrame(frame); }
@@ -140,9 +153,7 @@
   var plate = document.querySelector(".plate-section");
   var plateCard = plate ? plate.querySelector(".plate-card") : null;
   var plateLogo = document.querySelector(".nav .mark");
-  var plateAnim = null;
-  var plateWAAPI = !!(plateCard && plateLogo && typeof plateCard.animate === "function");
-  if (plate && !reduce) {
+  if (plate && plateCard && !reduce) {
     var ticking = false;
     function plateFrame() {
       ticking = false;
@@ -152,32 +163,18 @@
       var dist = Math.abs(center - vh * 0.48) / (vh * 0.58);
       var t = Math.max(0, Math.min(1, 1 - dist));
       var eased = t * t * (3 - 2 * t);
-      if (plateWAAPI) {
-        var box = plate.querySelector(".wrap").getBoundingClientRect();
-        var l = plateLogo.getBoundingClientRect();
-        var dx = (l.left + l.width / 2) - (box.left + box.width / 2);
-        var dy = (l.top + l.height / 2) - (box.top + box.height / 2);
-        var scale = 0.07 + eased * 0.93;
-        var x = dx * (1 - eased);
-        var y = dy * (1 - eased);
-        var opacity = eased < 0.08 ? 0 : 1;
-        plate.classList.toggle("is-live", eased > 0.82);
-        try {
-          if (plateAnim) plateAnim.cancel();
-          plateAnim = plateCard.animate(
-            [{
-              transform: "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) scale(" + scale.toFixed(3) + ")",
-              opacity: opacity
-            }],
-            { duration: 220, fill: "forwards", easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
-          );
-          return;
-        } catch (err) {
-          plateWAAPI = false;
-        }
-      }
-      var step = String(Math.round(eased * 10));
-      if (plate.getAttribute("data-open") !== step) plate.setAttribute("data-open", step);
+      var wrap = plate.querySelector(".wrap");
+      var box = wrap ? wrap.getBoundingClientRect() : rect;
+      var l = plateLogo ? plateLogo.getBoundingClientRect() : { left: 0, top: 0, width: 0, height: 0 };
+      var dx = (l.left + l.width / 2) - (box.left + box.width / 2);
+      var dy = (l.top + l.height / 2) - (box.top + box.height / 2);
+      var scale = 0.07 + eased * 0.93;
+      var x = dx * (1 - eased);
+      var y = dy * (1 - eased);
+      var opacity = eased < 0.08 ? 0 : 1;
+      plate.classList.toggle("is-live", eased > 0.82);
+      plateCard.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) scale(" + scale.toFixed(3) + ")";
+      plateCard.style.opacity = String(opacity);
     }
     function onScroll() {
       if (!ticking) {
@@ -187,7 +184,7 @@
     }
     plateFrame();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", plateFrame);
+    window.addEventListener("resize", plateFrame, { passive: true });
   } else if (plate) {
     plate.setAttribute("data-open", "10");
   }

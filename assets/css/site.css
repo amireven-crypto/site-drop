@@ -68,6 +68,8 @@ input, textarea { caret-color: var(--blue); }
   z-index: 0;
   pointer-events: none;
   opacity: var(--stream-alpha);
+  contain: strict;
+  transform: translateZ(0);
 }
 
 .page { position: relative; z-index: 1; }
@@ -161,6 +163,7 @@ p { text-wrap: pretty; margin: 0; }
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  transform: translateZ(0);
 }
 .logo {
   display: inline-flex;
@@ -748,19 +751,18 @@ input::placeholder { color: #6e6e73; }
 
 /* Settle */
 .js .settle {
-  opacity: 0.55;
-  filter: blur(10px);
-  transform: translateY(22px) scale(1.025);
+  opacity: 0;
+  transform: translateY(16px);
 }
 .js .settle.in {
   animation: settle var(--dur-settle) var(--ease-mechanism) both;
 }
 @keyframes settle {
-  from { opacity: 0.45; filter: blur(14px); transform: translateY(26px) scale(1.035); }
-  to { opacity: 1; filter: blur(0); transform: none; }
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .js .settle, .js .settle.in { animation: none; opacity: 1; filter: none; transform: none; }
+  .js .settle, .js .settle.in { animation: none; opacity: 1; transform: none; }
   .bead, .js .ring-value, .js .bar span { animation: none; }
   .js .ring-value { stroke-dashoffset: 0; }
   .window { transform: none; }
@@ -778,7 +780,7 @@ input::placeholder { color: #6e6e73; }
 }
 
 /* Plate steps. JS sets data-open 0–10. Without JS the plate stays full size. */
-.js .plate-card { transform: scale(0.14); pointer-events: none; }
+.js .plate-card { transform: scale(0.14); pointer-events: none; will-change: transform; }
 .js .plate-section.is-live .plate-card { pointer-events: auto; }
 .js .plate-section[data-open="1"] .plate-card { transform: scale(0.22); }
 .js .plate-section[data-open="2"] .plate-card { transform: scale(0.32); }
@@ -790,7 +792,6 @@ input::placeholder { color: #6e6e73; }
 .js .plate-section[data-open="8"] .plate-card { transform: scale(0.9); }
 .js .plate-section[data-open="9"] .plate-card { transform: scale(0.96); }
 .js .plate-section[data-open="10"] .plate-card { transform: scale(1); }
-.js .plate-card { transition: transform var(--dur-fast) var(--ease-mechanism); }
 @media (prefers-reduced-motion: reduce) {
   .js .plate-card, .js .plate-section[data-open] .plate-card {
     transform: none; transition: none; pointer-events: auto; opacity: 1;
@@ -924,3 +925,9 @@ input::placeholder { color: #6e6e73; }
   font-size: var(--step--1);
 }
 .privacy-note { margin-top: var(--space-3); max-width: 36rem; }
+
+/* Skip offscreen layout/paint; last rendered size is remembered to limit CLS */
+.work-item, #process, #scope, .foot {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
