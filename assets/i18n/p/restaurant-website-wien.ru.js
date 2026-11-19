@@ -1,6 +1,7 @@
 /* restaurant-website-wien/index.html – ru */
 I18N.add({
 "ru": {
+"Barrierefreiheitserklärung": "Заявление о доступности",
 "Zum Inhalt springen": "Перейти к основному содержанию",
 "PIXELPOP – Startseite": "PIXELPOP — главная",
 "Hauptmenü": "Основное меню",

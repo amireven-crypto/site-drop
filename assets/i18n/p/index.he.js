@@ -2,6 +2,7 @@
 
 I18N.add({
 "he": {
+"Accessibility statement": "הצהרת נגישות",
 "PIXELPOP | Websites for businesses": "PIXELPOP | אתרים לעסקים",
 "PIXELPOP — lollipop wordmark and a glass droplet with a tiny website inside": "PIXELPOP - סימן מילים על מקל וטיפת זכוכית עם אתר אינטרנט זעיר בפנים",
 "Skip to main content": "דילוג לתוכן הראשי",

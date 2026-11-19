@@ -2,6 +2,7 @@
 
 I18N.add({
 "de": {
+"Accessibility statement": "Barrierefreiheitserklärung",
 "PIXELPOP | Websites for businesses": "PIXELPOP | Websites für Unternehmen",
 "PIXELPOP — lollipop wordmark and a glass droplet with a tiny website inside": "PIXELPOP – Lollipop-Wortmarke und ein Glastropfen mit einer winzigen Website darin",
 "Skip to main content": "Zum Inhalt springen",

@@ -1,6 +1,7 @@
 /* web-design-vienna/index.html – he */
 I18N.add({
 "he": {
+"Accessibility statement": "הצהרת נגישות",
 "Skip to main content": "דלגו לתוכן הראשי",
 "PIXELPOP — home": "PIXELPOP — דף הבית",
 "Main": "תפריט ראשי",

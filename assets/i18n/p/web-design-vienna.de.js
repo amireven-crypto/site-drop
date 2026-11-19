@@ -1,6 +1,7 @@
 /* web-design-vienna/index.html – de */
 I18N.add({
 "de": {
+"Accessibility statement": "Barrierefreiheitserklärung",
 "Skip to main content": "Zum Inhalt springen",
 "PIXELPOP — home": "PIXELPOP – Startseite",
 "Main": "Hauptmenü",

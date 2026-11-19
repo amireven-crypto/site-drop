@@ -905,7 +905,7 @@ input::placeholder { color: #6e6e73; }
   text-align: left; padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--line); vertical-align: top;
 }
 .token-table th { color: var(--faint); font-weight: 520; }
-.doc-block { display: grid; gap: var(--space-4); margin: var(--space-6) 0; }
+.doc-block { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); margin: var(--space-6) 0; }
 .c-black { background: #050507; }
 .c-ink { background: #1d1d1f; }
 .c-gray { background: #6e6e73; }
@@ -992,3 +992,12 @@ input::placeholder { color: #6e6e73; }
 /* QA 2026-11-18: on the pink contact card the "Required/Optional" hints (3.7:1) and the [placeholder] text (1.8:1) failed AA; full-strength ink reaches 4.8:1. Colour only. */
 .form-card .field-flag { opacity: 1; }
 .form-card .ph, .plate-card .ph { color: #1d1d1f; }
+
+/* Accessibility statement (accessibility.html) */
+.statement { display: grid; gap: var(--space-3); margin: var(--space-5) 0 var(--space-6); }
+.statement h2 { margin-top: var(--space-4); font-size: var(--step-1); }
+.statement p, .statement ul { margin: 0; max-width: var(--measure); color: var(--fg); line-height: 1.55; }
+.statement ul { padding-inline-start: 1.25rem; display: grid; gap: 0.45rem; }
+.statement a { color: var(--fg); text-decoration: underline; text-underline-offset: 0.18em; overflow-wrap: anywhere; }
+.statement a:hover { text-decoration-thickness: 2px; }
+.sys-hero .lede, .sys-hero h1 { overflow-wrap: anywhere; hyphens: auto; }

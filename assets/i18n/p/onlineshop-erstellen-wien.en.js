@@ -1,6 +1,7 @@
 /* onlineshop-erstellen-wien/index.html – en */
 I18N.add({
 "en": {
+"Barrierefreiheitserklärung": "Accessibility statement",
 "Zum Inhalt springen": "Skip to main content",
 "PIXELPOP – Startseite": "PIXELPOP — home",
 "Hauptmenü": "Main",

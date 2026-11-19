@@ -1,6 +1,7 @@
 /* web-design-vienna/index.html – ru */
 I18N.add({
 "ru": {
+"Accessibility statement": "Заявление о доступности",
 "Skip to main content": "Перейти к основному содержанию",
 "PIXELPOP — home": "PIXELPOP — главная",
 "Main": "Основное меню",

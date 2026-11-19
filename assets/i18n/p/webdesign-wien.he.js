@@ -1,6 +1,7 @@
 /* webdesign-wien/index.html – he */
 I18N.add({
 "he": {
+"Barrierefreiheitserklärung": "הצהרת נגישות",
 "Zum Inhalt springen": "דלגו לתוכן הראשי",
 "PIXELPOP – Startseite": "PIXELPOP — דף הבית",
 "Hauptmenü": "תפריט ראשי",
