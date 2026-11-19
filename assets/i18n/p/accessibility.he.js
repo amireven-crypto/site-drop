@@ -142,3 +142,5 @@ I18N.add({
 "Statement prepared on 18 November 2026. Last reviewed on 18 November 2026.": "ההצהרה נערכה ב־18 בנובמבר 2026. נבדקה לאחרונה ב־18 בנובמבר 2026."
 }
 });
+
+I18N.add({"he": {"Privacy policy": "מדיניות פרטיות"}});

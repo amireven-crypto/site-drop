@@ -142,3 +142,5 @@ I18N.add({
 "Statement prepared on 18 November 2026. Last reviewed on 18 November 2026.": "Erklärung erstellt am 18. November 2026. Zuletzt überprüft am 18. November 2026."
 }
 });
+
+I18N.add({"de": {"Privacy policy": "Datenschutzerklärung"}});

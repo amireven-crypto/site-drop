@@ -89,3 +89,5 @@ I18N.add({
 "Onlineshop erstellen lassen in Wien": "Have an online store made in Vienna"
 }
 });
+
+I18N.add({"en": {"Datenschutzerklärung": "Privacy policy"}});

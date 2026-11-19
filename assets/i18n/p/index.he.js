@@ -189,3 +189,5 @@ I18N.add({
 "Webdesign Wien": "עיצוב אתרים בווינה"
 }
 });
+
+I18N.add({"he": {"Privacy policy": "מדיניות פרטיות"}});

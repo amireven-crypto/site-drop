@@ -107,3 +107,5 @@ I18N.add({
 "Required": "Erforderlich"
 }
 });
+
+I18N.add({"de": {"Privacy policy": "Datenschutzerklärung"}});

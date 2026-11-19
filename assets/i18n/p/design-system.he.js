@@ -107,3 +107,5 @@ I18N.add({
 "Required": "חובה"
 }
 });
+
+I18N.add({"he": {"Privacy policy": "מדיניות פרטיות"}});

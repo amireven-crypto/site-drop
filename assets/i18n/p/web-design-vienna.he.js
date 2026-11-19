@@ -98,3 +98,5 @@ I18N.add({
 "Open menu": "פתיחת תפריט"
 }
 });
+
+I18N.add({"he": {"Privacy policy": "מדיניות פרטיות"}});

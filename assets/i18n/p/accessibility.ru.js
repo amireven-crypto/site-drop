@@ -142,3 +142,5 @@ I18N.add({
 "Statement prepared on 18 November 2026. Last reviewed on 18 November 2026.": "Заявление составлено 18 ноября 2026 года. Последняя проверка: 18 ноября 2026 года."
 }
 });
+
+I18N.add({"ru": {"Privacy policy": "Политика конфиденциальности"}});

@@ -98,3 +98,5 @@ I18N.add({
 "Open menu": "Menü öffnen"
 }
 });
+
+I18N.add({"de": {"Privacy policy": "Datenschutzerklärung"}});

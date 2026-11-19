@@ -89,3 +89,5 @@ I18N.add({
 "Onlineshop erstellen lassen in Wien": "Заказать интернет-магазин в Вене"
 }
 });
+
+I18N.add({"ru": {"Datenschutzerklärung": "Политика конфиденциальности"}});

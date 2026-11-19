@@ -189,3 +189,5 @@ I18N.add({
 "Webdesign Wien": "Webdesign Wien"
 }
 });
+
+I18N.add({"de": {"Privacy policy": "Datenschutzerklärung"}});

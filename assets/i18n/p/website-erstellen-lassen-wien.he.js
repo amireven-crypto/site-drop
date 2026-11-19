@@ -89,3 +89,5 @@ I18N.add({
 "Onlineshop erstellen lassen in Wien": "להזמין חנות מקוונת בווינה"
 }
 });
+
+I18N.add({"he": {"Datenschutzerklärung": "מדיניות פרטיות"}});
